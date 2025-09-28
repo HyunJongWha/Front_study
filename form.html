@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼(form)</title>
+</head>
+<body>
+    <!--action: 폼 태그로 만든 입력요소들을 전송할 대상 서버의 주소, 
+    method: 전송할 데이터의 타입 (백앤드 개발자들에게 중요)-->
+    <form action="" method="">
+        <!--label:input의 이름, for속성을 input의 id 속성과 일치시키면 label을 클릭했을 때 입력요소가 활성화된다.-->
+        <!--input의 type으로 사용할 수 있는 종류로는 ""안에서 ctrl+space를 누르면 나옴-->
+        <label for="text">텍스트:</label><input type="text" id="text"><br><!--명시적으로 label과 input 연결-->
+        <label>아이디:<input type="password"></label><br><!--암묵적으로 연결-->
+        <input type="checkbox" checked><br>
+    
+
+    <fieldset>
+        <legend>기본 정보(필수 입력)</legend>
+        <label>아이디:<input type="text" placeholder="아이디"></label><br>
+        <label>비밀번호:<input type="password"></label>
+    </fieldset>
+
+    <fieldset>
+        <legend>옵션정보</legend>
+        <label>가족관계:<input type="text"></label><br>
+        <label>생년월일:<input type="text"></label>
+    </fieldset>
+
+    <!--textarea:여러 줄의 값을 입력할 수 있음. 속성은 굳이 사용하지 않아도 됨.-->
+    <textarea></textarea><br>
+
+    <!--select-option 태그-->
+    <!--value:action의 서버에 전송할 데이터-->
+    <select multiple><!--multiple: 여러가지 한번에 선택가능-->
+        <optgroup label="성별">
+            <option value="male" selected>남</option><!--selected: 화면상 먼저 노출-->
+            <option value="female">여</option>
+        </optgroup>
+    </select>
+    <br>
+    <!--button 태그: input 태그로 button을 만들기보다 button태그로 만들어라-->
+    <button>안녕</button>
+
+    <!--form의 요소에서 사용할 수 있는 공통된 globla 속성-->
+    <!--disabled: 사용자가 입력할 수 없게함-->
+    <!--readonly: 사용자가 볼 수만 있고, 편집은 못함-->
+    <!--maxlength="": 사용자가 입력할 수 있느 최대 글자 수 제한-->
+    
+    </form>
+</body>
+</html>

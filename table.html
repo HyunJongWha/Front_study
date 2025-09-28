@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블</title>
+</head>
+<body>
+    <table border="1"><!--border속성은 나중에 css에서 사용할 것이니 신경X-->
+        <caption>가격표</caption>
+        <!--th는 표의 항목을 나타냄-->
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>상품명</th>
+            <th>수량</th>
+            <th>가격</th>
+        </tr>
+        </thead>
+        
+        <!--td는 데이터를 나타냄-->
+        <tfoot>
+        <!--tbody태그보다 tfoot태그를 먼저 작성해줘야 함. 스크린 리더기가 무수히 많은 데이터를 읽기전에 최종 요약본을 먼저 보게끔.-->
+        <tr>
+            <td>총 금액</td>
+            <td colspan="3">2,700원</td><!--열을 병합할 때-->
+        </tr>
+        </tfoot>
+        
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>콜라</td>
+            <td>1개</td>
+            <td>1,500원</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>사이다</td>
+            <td>2개</td>
+            <td rowspan="2">1,200원</td><!--이 행부터 2개의 행을 병합할거라는 뜻. 뒤의 행에는 이 요소를 입력하면 안됌. -->
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>탄산수</td>
+            <td>3개</td>
+            <!--<td>1,200원</td>-->
+        </tr>
+        </tbody>
+        
+    </table>
+
+    <table border="1">
+        <caption>시험 성적</caption>
+        <tr>
+            <th scope="col" rowspan="2">구분</th>
+            <th scope="colgroup" colspan="2">1학년</th>
+        </tr>
+        <tr>
+            <th>중간</th>
+            <th>기말</th>
+        </tr>
+        <tr>
+            <th scope="rowgroup" rowspan="2">전공</th>
+            <td>A+</td>
+            <td>C-</td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>B+</td>
+        </tr>
+    </table>
+</body>
+</html>
