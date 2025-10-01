@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기본 문법</title>
+    <!--
+    <style>
+        선택자{
+            속성 : 속성값; (선언부)
+        }
+    </style>
+    -->
+    <!--1. 내부 style sheet 방법: html 문서 내부에 작성-->
+    <style>
+        dt{
+            color: red;
+            background-color: aqua;
+        }
+        /* style sheet의 주석스타일 */
+    </style>
+    
+    <!--2. 외부 style sheet 방법-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <dl>
+        <dt>CSS</dt>
+        <dd>CSS는 Cascading Style Sheets의 약자입니다.</dd>
+        <!--3. 인라인 style 방법-->
+        <dd style="color: yellow;">이것은 인라인 방식입니다.</dd>
+    </dl>
+
+    <!--외부 style sheet 방식을 가장 추천함. 유지,보수가 편리함.-->
+</body>
+</html>

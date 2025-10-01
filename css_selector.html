@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자 다루기</title>
+
+    <style>
+        * {
+            color: black;
+        }   /* '*'은 전역을 의미한다. */
+
+        h1 {
+            color: red
+        }   /* 태그선택자 */
+
+        #dt {
+            color: blue;
+        }   /* id 선택자(unique 해야함) */
+
+        .yellow{
+            color: yellow;
+        }   /* class(.) 선택자(동일 class가 여러개 존재 가능) */
+
+        .red {
+            color: red;
+        }
+
+        [href="#"]{
+            color: brown;
+        }   /* 속성 선택자(뒤에 = 은 선택) */
+
+        h1,
+        p{
+            color:var();
+        }   /* 그룹 선택자 */
+
+        div > h1 {
+            color:black;
+        }   /* 자식 선택자 */
+
+        .box h1{
+            color:blueviolet
+        }   /* 하위 선택자(자식 선택자보다 더 포괄적) */
+
+        h2 + h3 {
+            color:red;
+        }   /* 인접 형제 선택자(무조건 다음 1개의 선택자만 적용) */
+
+        h4 ~ h5 {
+            color: brown;
+        }   /* 일반 형제 선택자(모두 다 선택) */
+
+        a::after{
+            content: 'test';  /*content라는 속성은 html에 컨텐츠를 추가하기 위해 사용되는 속성. after,before와 가장 많이 같이 사용*/
+        }   /* 가상요소 선택자(before도 존재함) */
+
+        /* 가상 클래스 선택자 */
+        
+        a:link{
+            color: brown;
+        }
+        
+        a:visited{
+            color: red;
+        }   /* 이전에 방문한 적이 있는 링크 */
+
+        a:hover{
+            color:chocolate;
+        }   /* 특정요소에 커서를 올렸을 때의 선택자 */
+
+        a:active{
+            color:red;
+        }   /* 마우스를 누르고 있는 동안 */
+
+        input:focus {
+            color: red;
+        }   /* 입력요소에 커서가 가 있을 때 */
+
+        input:checked + label{
+            color:blue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>H1 TAG</h1>
+    <p class="yellow">P TAG</p>
+    <dl>
+        <dt id="dt">CSS</dt>
+        <dd class="yellow red">CSS는 Cascading Style Sheets의 약자입니다. </dd>
+    </dl>
+    <a href="#">href</a>
+
+    <div class="box">
+        <h1>H1 TAG-1</h1>
+        <div>
+            <h1>H1 TAG-2</h1>
+        </div>
+    </div>
+
+    <h1>h1 tag</h1>
+    <h2>h2 tag</h2>
+    <h3>h3 tag</h3>
+    <h3>h3 tag</h3>
+    <h4>h4 tag</h4>
+    <h5>h5 tag</h5>
+    <h5>h5 tag</h5>
+
+    <a href="@">link</a>
+    <br>
+    <input type="text">
+
+    <input type="checkbox" checked>
+    <label>성별</label>
+</body>
+</html>
