@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티미디어 태그</title>
+</head>
+<body>
+    <!--오디오나 비디오가 같은 폴더 내에 있을 때 경로를 표현, controls는 재생할 수 있는 ui-->
+    <audio scr="./ ... " controls></audio>
+    <video scr="./ ... " controls></video>
+    <!--브라우저 별로 지원하는 영상.오디오 포멧 형식(ex.mp3, wav..)이 다름. "caniuse.com"에 접속해서 이를 알아볼 수 있음-->
+    
+    <!--source를 이용하여 각 브라우저가 지원하는 포멧 형식을 골라 보여줄 수 있음.-->
+    <audio controls>
+        <source src="./...wav" type="audio/wav">
+        <source src="./...mp3" type="audio/mp3">
+        지원하지 않는 브라우저입니다.
+    </audio>
+
+    
+</body>
+</html>
