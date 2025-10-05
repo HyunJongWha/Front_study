@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 모델을 구성하는 속성 다루기(margin, border, padding, content)</title>
+    <style>
+        .block-1 {
+            margin: 10px 20px 30px 40px;    /* margin-top, right 등의 형식으로도 작성 가능 */
+            border: 10px solid red;  /* 테두리 두께, 테두리 종류, 색상(축약속성). top,bottom식으로 작성 가능 */
+            padding: 10px;  /* html 내부영역. 중복 현상 X */
+            /* content 영역의 크기를 지정 */
+            width: 100px;   /* 가로 */
+            height: 100px;  /* 세로 */
+            box-sizing: border-box; /* padding+content의 크기를 지정 */
+            display: block;
+        }
+
+        .block-2 {
+            margin-top: 100px;  /* margin 중복 현상-> 중복 될 때 더 큰 값의 margin 값이 적용된다. block-1의 bottom < block-2의 top => block-2의 top 값이 브라우저에 적용. */
+            display: inline;    /* block의 줄바꿈 속성->inline 요소로 */
+        }
+
+        .inline-1 {
+            margin: 100px;  /* inline 요소는 top, bottom에는 영향을 미치지 못한다. */
+        }
+    </style>
+</head>
+<body>
+    <p class="block-1">block-1</p>
+    <p class="block-2">block-2</p>
+
+    <span class="inline-1">inline-1</span>
+    <span class="inline-2">inline-2</span>
+</body>
+</html>

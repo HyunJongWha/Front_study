@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 필수 속성 다루기.</title><!--웹 브라우저의 기본 style sheet, 개별성, 상속, 단위(unit), 색상표기법-->
+    <style>
+        /* 선택자에는 개별성 점수가 있다. 높은 점수의 선택자의 스타일이 최종적으로 적용된다. 동일 점수 내에서는 나중에 작성된 선택자가 적용 */
+
+        .box .inner p {
+            color: orange;
+        }
+        
+        .inner p{
+            color: red;
+        }
+
+        p {
+            color: blue;
+        }
+
+        p {
+            color: yellow;
+        }
+
+        .box {
+            color: red; /* 이 예제에서 .box 와 .box p 의 효과가 동일 */
+        }
+
+        p {
+            font-size: 16px; /* 기본 웹 브라우저의 폰트 사이즈 */
+            font-size: 1em; /* 부모의 폰트 크기의 배수 */
+            font-size: 1rem; /* 최상위 html 요소 폰트 크기의 배수 */
+            font-size: 80%; /* 16px * 0.8 */
+        }
+
+        p {
+            color: rgb(255,0,0);
+            color:rgba(red, green, blue, alpha); /* 알파 값은 색상의 적용 정도(명도?) */
+            color:#0000ff;  /* 16진수 표기법 */
+        }
+    </style>
+</head>
+<body>
+    <!--웹 브라우저는 기본 style sheet를 가지고 있다. 이로 인해서 hn태그 같은 것들이 화면에 다르게 표현되는 것임-->
+
+    <div class="box">
+        <div class="inner">
+            <p>p tag</p>    <!--box 클래스로부터 상속 받음-->
+        </div>
+    </div>
+</body>
+</html>

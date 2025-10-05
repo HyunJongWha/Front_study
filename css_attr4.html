@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 속성으로 요소의 배경 설정하기</title>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+
+        body {
+            background-color: white;
+
+            background-image: url('./abc.jpg');
+            background-repeat: no-repeat;   /* 사진이 화면보다 작을 때 기본적으로 화면을 다 채우도록 repeat하고, x.y 방향으로 repeat를 설정할 수도 있음 */
+            background-size: cover;
+            background-position: center center; /* x,y */
+            background-attachment: fixed;   /* 스크롤을 내려도 사진이 같이 따라옴 */
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
