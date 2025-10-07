@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 속성으로 전환 효과 제어하기</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: bgChange;
+            animation-duration: 5s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;  /* 애니메이션이 끝난 시점의 상태를 유지(실무에서 가장 많이 사용) */
+            /* backword: 애니메이션 실행전에도 시점의 상태를 적용 */
+            /* both:backword+forward */
+            animation-iteration-count: 2;   /* 반복횟수 */
+            animation-play-state: running;  /* running:실행, paused:정지 */
+            animation-direction: normal;  /* 애니메이션 진행방향 설정(실무에서는 많이 사용하지는 않음).reverse하면 역방향으로,alternate는 홀수는 순방향 짝수는 역방향... */
+            animation-timing-function: ease;
+        }
+
+        .box:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes bgChange {/* 식별자는 다른 keyframe과 중복되면 X, 시작(0%)과 종료(100%) 시점을 정의 */
+            0%{/* from */
+                background-color: blue;
+            }
+            25%{
+                background-color: pink;
+            }
+            50%{
+                background-color: aqua;
+            }
+            100%{/* to */
+                background-color: orange;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

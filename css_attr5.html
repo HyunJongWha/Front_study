@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위치 속성으로 HTML 요소 배치하기</title>
+    <style>
+        body {
+            height: 5000px; /* 스크롤 만들기 위해 */
+        }
+        .container {
+            background-color: #ccc;
+            width: 100%;
+            padding: 1rem;
+            margin: 150px;
+            position :relative; /* 부모 요소의 position을 relative로 지정하면, 자식의 absolute 기준 값이 부모 요소가 된다.  */
+            overflow: auto; /* 자식에 float가 적용되어있을 때, 높이를 인지하고 맞추기 위해 */
+
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        .red {
+            background-color: red;
+            position: relative; /* 원래의 위치를 보장하면서 좌표 속성으로 배치. absolute와 차이점 */
+            left: 200px;
+            z-index: 0; /* 겹쳐져 있을 때 위와 아래를 바꾸고 싶을 때. 기본값은 0이고, 커질수록 위에 배치*/
+        }
+        .green {
+            background-color: green;
+            position: absolute; /* position이 적용되지 않은 요소들은 적용된 요소를 인식하지 못한다. 그렇기 때문에 겹쳐서 보일 수 있음. */
+            left: 200px;    /* 왼쪽에서 200px 떠어진 좌표 */
+            top: 200px;
+        }
+        .blue {
+            background-color: blue;
+            position: fixed;    /* 스크롤을 내려도 좌표 값이 고정되어서 계속 동일 위치에 존재(배너 구현) */
+            right: 100px;
+            bottom: 50px;
+        }
+        .yellow {
+            background-color: yellow;
+            position: sticky;   /* 스크롤을 내려 top이 0이 되는 지점부터 fixed */
+            top: 0;
+        }
+        .orange {
+            background-color: orange;
+            float: left;    /* 정렬. absolute처럼 적용되지 않은 요소들이 인식하지 못해 겹쳐질 수 있음. */
+        }
+        .brown {
+            background-color: brown;
+            float: left;
+        }
+        .black {
+            background-color: black;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+        <div class="box yellow"></div>
+    </div>
+
+    <div class="container">
+        <div class="box orange"></div>
+        <div class="box brown"></div>
+        <div class="box black"></div>
+    </div>
+</body>
+</html>

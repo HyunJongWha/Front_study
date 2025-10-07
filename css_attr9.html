@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 폰트와 아이콘 폰트</title>
+    <!--아이콘 폰트(fontawesome)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style> /* goggle font */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        /* import 구문은 항상 style의 최상단에 있어야함.(url방식. link방식도 존재.) */
+    p {
+        font-family: 'Poppins', sans-serif;
+    }  
+
+    i { /* 아이콘이 폰트이기 때문에 폰트취급으로 속성을 바꿀 수 있다. */
+        font-size: 50px;
+        color: brown;
+    }
+    </style>
+</head>
+<body>
+    <p>.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+</p>
+
+<i class="fa-chisel fa-regular fa-house"></i>
+</body>
+</html>

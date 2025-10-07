@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>번형 효과 적용하기(실무에서 활용되는 2D만)</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transform: translate(100px,100px);   /* X,y축으로 움직이기(음수도 가능) */
+            transform: scale;
+            /*
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            =>화면 정중앙에 놓임
+            */
+        }
+        .box:hover {
+            transform: scale(2,3);   /* x,y축 방향으로 확대 */
+            /* transform: skewX(30deg);    30도만큼 x축 방향으로 비틀기 */
+            /* transfrom: rotate(30deg); 30도만큼 회전*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
