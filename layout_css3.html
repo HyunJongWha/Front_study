@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹을 위한 미디어 쿼리 사용하기</title>
+    <style>
+        @media only screen and (max-width: 640px){
+            p{
+                color: red;
+            }
+        }
+        @media only screen and (max-width: 440px){
+            p{
+                color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>
+        grid-template-columns: repeat(2,1fr); /* 열 너비 지정. fr은 나머지 영역을 가득채운다(균등분배할 때 사용가능) */
+            grid-template-rows: repeat(2,1fr); /* 행 높이 지정 */
+            /* grid-template-columns: repeat(2,minmax(100px,1fr)) => 화면의 크기나 그리드 컨테이너의 크기가 줄어도 너비가 100px이하로 떨어지지 않게 표현. */
+            row-gap: 1rem;
+            column-gap: 1rem;   /* row,column-gap은 Internet Explorer에서 사용불가 */
+        
+            align-items: start; /* 세로 정렬 */
+            justify-items: center;  /* 가로 정렬 */
+            /* place-items: start center */
+    </p>
+</body>
+</html>

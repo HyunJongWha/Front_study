@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 레이아웃(2차원 방식)</title>
+    <style>
+        .container {
+            color: white;
+            background-color: #c9c9c9;
+            padding: 1rem;
+            height: 400px;
+
+            display: grid;  /* 그리드 컨테이너가 됨. 자식은 그리드 아이템 */
+            
+            grid-template-areas: /* grid-area방식으로 아이템들을 지정해서 배치를 할 수도 있음.  */
+                'A B'
+                'C D';
+            grid-template-columns: repeat(2,1fr); /* 열 너비 지정. fr은 나머지 영역을 가득채운다(균등분배할 때 사용가능) */
+            grid-template-rows: repeat(2,1fr); /* 행 높이 지정 */
+            /* grid-template-columns: repeat(2,minmax(100px,1fr)) => 화면의 크기나 그리드 컨테이너의 크기가 줄어도 너비가 100px이하로 떨어지지 않게 표현. */
+            row-gap: 1rem;
+            column-gap: 1rem;   /* row,column-gap은 Internet Explorer에서 사용불가 */
+        
+            align-items: start; /* 세로 정렬 */
+            justify-items: center;  /* 가로 정렬 */
+            /* place-items: start center */
+        }
+        .box {
+            background-color: red;
+            grid-area: A;
+        }
+        .box:nth-child(2) {
+            background-color: orange;
+            align-self: self-end;
+            grid-area: B;
+        }
+        .box:nth-child(3) {
+            background-color: green;
+            grid-area: C;
+        }
+        .box:nth-child(4) {
+            background-color: blue;
+            grid-area: D;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+    </div>
+</body>
+</html>

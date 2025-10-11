@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스 박스 레이아웃(1차원 방식)</title>
+    <style>
+        .container {
+            color: white;
+            background-color: #c9c9c9;
+            padding: 1rem;
+            height: 400px;
+
+            display: flex;  /* 부모는 플렉스 박스임을 선언 -> 자식인 플렉스 아이템은 본인의 크기에 맞게 인라인 요소처럼 배치. inline-flex는 display 속성이 inline인 것 */
+            flex-direction: row;   /* 플렉스 아이템의 진행방향(기본 값은 row) */
+            flex-wrap: wrap;    /* 플렉스 아이템의 높이나 너비가 커서 플렉스 박스를 벗어날 때 처리할 방식 결정. wrap은 너비가 벗어날 때 줄바꿈. */
+            justify-content: space-around;  /* 진행방향 기준으로 정렬 */
+            align-items: center;    /* 세로정렬 */
+        }
+        .box {
+            width: 100px;
+            background-color: red;
+        }
+        .box:nth-child(2n) {
+            align-self: flex-end;   /* 플렉스 아이템에서 각자 정렬할 수도 있음 */
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+    </div>
+</body>
+</html>
