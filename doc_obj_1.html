@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>문서 객체 모델 이해하기</title>
+  </head>
+  <body>
+    <!-- 웹 브라우저가 html 문서를 읽으면서 DOM 트리형태로 문서 구조를 변환시킨다. 트리의 형태는 html 문서의 들여쓰기 형태와 유사함. (참고로 엔터도 text 노드로 취급한다.)
+      
+    각 노드에는 타입이 존재한다.
+          1. 문서 노드 : 최상위 document 객체의 노드
+          2. 요소 노드 : h1,p 태그와 같은 요소의 노드
+          3. 속성 노드 : href,src와 같은 요소의 노드
+          4. 텍스트 노드 : 텍스트에 해당하는 노드
+          5. 주석 노드 : 주석에 해당하는 노드          -->
+
+    <!--
+    노드를 제어하기 위해서는 노드를 선택하는 방식이 필요하다.(docment.xxx 형식)
+      1. 속성으로 노드 선택하기. 
+        모든 노드 탐색:                                              요소 노드 탐색: enter(text), DOCTYPE 같은 것들을 제외한 요소들만 탐색
+        parentNode-부모 노드를 반환                                  parentElement-부모 요소 노드를 반환합니다.
+        childNodes-모든 자식 노드를 반환(배열이기 때문에 인덱스로 접근)   children-자식 요소 노드를 반환
+        firstchild-첫번째 자식 노드                                  firstElementChild-첫 번째 자식 요소 노드를 반환
+        lastChild-마지막 자식 노드                                   lastElementChild-마지막 자식 요소 노드
+        previousSibling-이전 형제 노드                               previousElementSibling-이전 요소 노드
+        nextSibling-다음 형제 노드                                   nextElementSibling-다음 요소 노드
+          => 단점: DOM 트리의 구조가 깊고, 복잡해진다면 상위부터 접근해야하기 때문에 하위의 노드를 선택하기 복잡하다. 
+
+      2. 메서드로 노드 선택하기.
+        메서드 형식:
+          1. getElementById(<id 속성값>) - id 속성값과 일치하는 요소 노드 1개만 선택 (id 속성값은 unique)
+          2. getElementByClassName(<class 속성값>) - class 속성값과 일치하는 요소 노드를 모두 선택 (인덱스 번호로 접근)
+          3. getElementByTagName(<태그명>) - 태그명과 일치하는 요소 노드를 모두 선택
+            => 단점: id, class 같은 특정 매개변수를 맞춰서 넘겨줘야 함.
+        *Query 메서드 : css 선택자와 유사하게 접근, 가장 편리. 적극적 사용 추천.
+          1. querySelector(<CSS 선택자>) - 매개변수로 넘어오는 CSS 선택자에 해당하는 노드를 1개만.
+          2. querySelectorAll(<CSS 선택자>) - 매개변수로 넘어오는 CSS 선택자에 해당하는 노드를 모두.
+    -->
+    
+  </body>
+</html>
